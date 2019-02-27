@@ -42,8 +42,6 @@ def main():
     photoAlbums = vk.photos.getAlbums(owner_id = "-"+str(group))['items']
     for album in photoAlbums:
         i = 0
-        #test = str(album['id'])
-        uff = 999 + 999 / 2 * 100
         if not os.path.exists("parsed/"+album['title']):
             os.makedirs("parsed/"+album['title'])
         photos = vk.photos.get(owner_id = "-"+str(group), album_id = album['id'], photo_sizes = 1, count = 1000)['items']
